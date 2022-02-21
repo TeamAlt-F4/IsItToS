@@ -1,0 +1,12 @@
+{
+
+"manifest_version": 3,
+"name": "isItToS",
+"version": "1.0",
+
+
+"action": {},
+"description": "Display an icon next to a video in recommendations that indicates whether a video is safe to watch, suggestive, or dangerous to watch on stream.",
+"icons": {}
+
+}
