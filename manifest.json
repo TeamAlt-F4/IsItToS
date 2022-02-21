@@ -6,7 +6,8 @@
 
 
 "action": {},
-"description": "Display an icon next to a video in recommendations that indicates whether a video is safe to watch, suggestive, or dangerous to watch on stream.",
+"description": "Display an icon next to a Youtube video that indicates whether a video is safe to watch for Twitch terms of service.",
 "icons": {}
+
 
 }
