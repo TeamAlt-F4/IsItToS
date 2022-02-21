@@ -7,7 +7,14 @@
 
 "action": {},
 "description": "Display an icon next to a Youtube video that indicates whether a video is safe to watch for Twitch terms of service.",
-"icons": {}
+"icons": {},
 
+"content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["pageStyles.css"],
+      "js": ["contentScript.js"]
+    }
+  ]
 
 }
