@@ -5,6 +5,8 @@ const QUESTIONABLE_VIDEO = "QUESTIONABLE_STATE";
 const UNKNOWN_VIDEO = "UNKNOWN_STATE";
 const DANGEROUS_VIDEO = "DANGEROUS_STATE"
 
+
+//finds the thumbnail on the page and returns the location to add our icon
 function getThumbnail() {
     if (document.getElementsById("thumbnail")?.offsetParent === null) {
         return document.querySelector("ytd-menu-renderer.ytd-watch-metadata > div");
@@ -15,15 +17,21 @@ function getThumbnail() {
     }
 }
 
-//edit function later
+function addOverlay(){
+    //css code and logic to add and overlay
+}
+
+
 function getState() {
-    if (isVideoLiked()) {
-        return LIKED_STATE;
+    if (isVideoSafe()) {
+        return SAFE_VIDEO;
     }
-    if (isVideoDisliked()) {
-        return DISLIKED_STATE;
+    if (!isVideoSafe()) {
+        return DANGEROUS_VIDEO;
+    } else {
+        return NEUTRAL_STATE;
     }
-    return NEUTRAL_STATE;
+
 }
 
 function getVideoID(){
