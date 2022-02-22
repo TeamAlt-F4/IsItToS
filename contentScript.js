@@ -17,6 +17,8 @@ function getThumbnail() {
     }
 }
 
+
+
 function addOverlay(){
     //css code and logic to add and overlay
 }
@@ -41,7 +43,16 @@ function getVideoID(){
 function isVideoSafe(){
     if (current.video == ageRestricted){
         return False;
+    } if (current.video == isModRestricted) {
+        return False;
     } else {
         return True;
     }
+}
+
+function isModRestricted() { //fetch mod data
+    if (current.video == modRestricted) {
+        return False
+    } else return True;
+
 }
