@@ -9,14 +9,14 @@ const DANGEROUS_VIDEO = "DANGEROUS_STATE"
 //finds the thumbnail on the page and returns the location to add our icon
 function getThumbnail() {
     if (document.getElementsById("thumbnail")?.offsetParent === null) {
-        return document.querySelector("ytd-menu-renderer.ytd-watch-metadata > div");
-    } else {
-        return document
-            .getElementById("menu-container")
-            ?.querySelector("#top-level-buttons-computed");
+        return document.querySelector("ytd-menu-thumbnail-content > div");
     }
 }
 
+//api request to our server to get data
+fetch(
+    `https://isittos.gg/videoDatabase?videoId=${getVideoID()}`
+)
 
 
 function addOverlay(){
