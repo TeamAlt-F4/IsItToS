@@ -2,7 +2,7 @@ const express = require("epress")
 const router = express.Router()
 
 const videoInfo = {
-    "id":1,
+    "id": 1,
     "name" : "How to Tie a Tie",
     "TOS" : true
 }
