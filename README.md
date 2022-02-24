@@ -1,12 +1,13 @@
+READ ME
 ======================================
 
-_ _|      _ _| |   __ __|             
-  |   __|   |  __|    |    _ \    __| 
-  | \__ \   |  |      |   (   | \__ \ 
-___|____/ ___|\__|   _|  \___/  ____/ 
+	*	_ _|      _ _| |   __ __|             	*
+	*	  |   __|   |  __|    |    _ \    __| 	*
+	*	  | \__ \   |  |      |   (   | \__ \ 	*
+	*	___|____/ ___|\__|   _|  \___/  ____/ 	*
                                       
 
-======================================
+=============================================
 
 Every day, approximately 30 million people watch content from the popular streaming website twitch.tv.
 Over 7 million people stream on the site monthly.
