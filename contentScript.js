@@ -1,4 +1,4 @@
-//Adapted from Return YouTube Dislikes source code https://github.com/Anarios/return-youtube-dislike/blob/main/Extensions/UserScript/Return%20Youtube%20Dislike.user.js
+
 
 const SAFE_VIDEO = "SAFE_STATE";
 const QUESTIONABLE_VIDEO = "QUESTIONABLE_STATE";
@@ -56,3 +56,12 @@ function isModRestricted() { //fetch mod data
     } else return True;
 
 }
+
+(function () {
+    const injectElement = document.createElement('div');
+    injectElement.className = 'dot';
+    var divArr = document.getElementsByTagName('ytd-playlist-video-renderer');
+    //var divArr = document.querySelectorAll('ytd-playlist-video-renderer');
+    document.body.appendChild(injectElement);
+    console.log(divArr);
+})();

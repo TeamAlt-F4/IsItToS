@@ -1,11 +1,8 @@
 {
-
-"manifest_version": 3,
 "name": "IsItToS",
 "version": "1.0",
 
 
-"action": {},
 "description": "Display an icon next to a Youtube video that indicates whether a video is safe to watch for Twitch terms of service.",
 "icons": {
     "16": "icons/16x16.png",
@@ -13,12 +10,15 @@
     "128": "icons/128x128.png"
 },
 
+
 "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
+      "js": ["contentScript.js"],
+      "matches": ["*://www.youtube.com/*"],
       "css": ["pageStyles.css"],
-      "js": ["contentScript.js"]
+      "exclude_matches": ["*://*.music.youtube.com/*"]
     }
-  ]
-
+  ],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "manifest_version": 3
 }
