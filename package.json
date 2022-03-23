@@ -1,17 +1,17 @@
 {
-  "name": "csc3380",
+  "name": "youtube-api-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3",
-    "node-fetch": "^3.2.3"
+    "dotenv": "^16.0.0",
+    "googleapis": "^97.0.0"
   }
 }
