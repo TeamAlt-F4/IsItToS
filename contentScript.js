@@ -1,5 +1,5 @@
 
-
+/*
 const SAFE_VIDEO = "SAFE_STATE";
 const QUESTIONABLE_VIDEO = "QUESTIONABLE_STATE";
 const UNKNOWN_VIDEO = "UNKNOWN_STATE";
@@ -56,12 +56,16 @@ function isModRestricted() { //fetch mod data
     } else return True;
 
 }
-
+*/
 (function () {
     const injectElement = document.createElement('div');
     injectElement.className = 'dot';
+    setInterval(50);
+    //var divArr = document.querySelectorAll("meta.style-scope.ytd-playlist-video-renderer");
+    //var divArr = $("div.yt-simple-endpoint style-scope yt-formatted-string");
     var divArr = document.getElementsByTagName('ytd-playlist-video-renderer');
+    //divArr[0].appendChild(injectElement);
     //var divArr = document.querySelectorAll('ytd-playlist-video-renderer');
-    document.body.appendChild(injectElement);
+    //document.body.appendChild(injectElement);
     console.log(divArr);
 })();
