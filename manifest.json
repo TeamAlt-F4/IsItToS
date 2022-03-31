@@ -14,11 +14,11 @@
 "content_scripts": [
     {
       "js": ["jquery-3.1.0.min.js", "contentScript.js"],
-      "matches": ["*://www.youtube.com/*"],
+      "matches": ["*://www.youtube.com/playlist*"],
       "css": ["pageStyles.css"],
       "exclude_matches": ["*://*.music.youtube.com/*"]
     }
   ],
-  "host_permissions": ["*://*.youtube.com/*"],
+  "host_permissions": ["*://*.youtube.com/playlist*"],
   "manifest_version": 3
 }
