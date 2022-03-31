@@ -1,4 +1,5 @@
-
+var playlistLength = 7;
+var position = 130;
 /*
 const SAFE_VIDEO = "SAFE_STATE";
 const QUESTIONABLE_VIDEO = "QUESTIONABLE_STATE";
@@ -57,15 +58,27 @@ function isModRestricted() { //fetch mod data
 
 }
 */
-(function () {
-    const injectElement = document.createElement('div');
-    injectElement.className = 'dot';
-    setInterval(50);
-    //var divArr = document.querySelectorAll("meta.style-scope.ytd-playlist-video-renderer");
-    //var divArr = $("div.yt-simple-endpoint style-scope yt-formatted-string");
-    var divArr = document.getElementsByTagName('ytd-playlist-video-renderer');
-    //divArr[0].appendChild(injectElement);
-    //var divArr = document.querySelectorAll('ytd-playlist-video-renderer');
-    //document.body.appendChild(injectElement);
-    console.log(divArr);
-})();
+
+dotConstuctor();
+
+function dotConstuctor() {
+    for(var i = 0; i < playlistLength; i++) {
+        var dot = [];
+        dot[i] = document.createElement('div');
+        dot[i].className = 'dot';
+        dot[i].setAttribute("id", i);   
+        document.body.appendChild(dot[i]);
+        var elementStyle = document.getElementById(i).style;
+        elementStyle.top = position + 'px';
+        position = position + 101;
+        dot[i].classList.add('green');  //temp line
+    }
+}
+
+function setDotColor(dot) {
+    if (dot == safeVideo) {
+        dot.classList.add('green');
+    } else if (dot == restrictedVideo) {
+        dot.classList.add('red');
+    } else dot.classList.add('yellow');
+}

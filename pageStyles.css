@@ -1,11 +1,19 @@
 .dot{
-    width: 105px;
-    height: 105px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    background-color: red;
     display: inline-block;
     position: absolute;
-    top: 20px;
-    right: 350px;
-    z-index: 99999;
+    top: 130px;
+    right: 1120px;
+    z-index: 9;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
 }
