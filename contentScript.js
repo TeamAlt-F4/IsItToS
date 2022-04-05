@@ -1,5 +1,9 @@
 var playlistLength = 7;
 var position = 130;
+var dots = {
+    "circle" : [],
+    "data" : []
+}
 /*
 const SAFE_VIDEO = "SAFE_STATE";
 const QUESTIONABLE_VIDEO = "QUESTIONABLE_STATE";
@@ -66,15 +70,15 @@ console.log(result);
 
 function dotConstuctor() {
     for(var i = 0; i < playlistLength; i++) {
-        var dot = [];
-        dot[i] = document.createElement('div');
-        dot[i].className = 'dot';
-        dot[i].setAttribute("id", i);   
-        document.body.appendChild(dot[i]);
+        dots.circle[i] = document.createElement('div');
+        dots.circle[i].className = 'dot';
+        dots.circle[i].setAttribute("id", i);   
+        document.body.appendChild(dots.circle[i]);
         var elementStyle = document.getElementById(i).style;
         elementStyle.top = position + 'px';
         position = position + 101;
-        dot[i].classList.add('green');  //temp line
+        //hover();
+        dots.circle[i].classList.add('green');  //temp line
     }
 }
 
@@ -86,3 +90,8 @@ function setDotColor(dot) {
     } else dot.classList.add('yellow');
 }
 
+function hover(dot) {
+    dots.data.classList.add('hoverData')
+    dots.addEventListener('mouseenter', () => dots.data.zIndex = 9)
+    dots.addEventListener('mouseleave', () => dots.data.zIndex = 0)
+}
