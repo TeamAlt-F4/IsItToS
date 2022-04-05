@@ -61,6 +61,9 @@ function isModRestricted() { //fetch mod data
 
 dotConstuctor();
 
+let result = document.querySelectorAll('#content > #page-manager');
+console.log(result);
+
 function dotConstuctor() {
     for(var i = 0; i < playlistLength; i++) {
         var dot = [];
@@ -82,3 +85,4 @@ function setDotColor(dot) {
         dot.classList.add('red');
     } else dot.classList.add('yellow');
 }
+
