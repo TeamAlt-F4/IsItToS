@@ -65,7 +65,7 @@ function isModRestricted() { //fetch mod data
 
 dotConstuctor();
 
-let result = document.querySelectorAll('#content > #page-manager');
+let result = document.getElementById;
 console.log(result);
 
 function dotConstuctor() {
@@ -77,7 +77,7 @@ function dotConstuctor() {
         var elementStyle = document.getElementById(i).style;
         elementStyle.top = position + 'px';
         position = position + 101;
-        //hover();
+        hover(dots.data[i]);
         dots.circle[i].classList.add('green');  //temp line
     }
 }
@@ -91,7 +91,8 @@ function setDotColor(dot) {
 }
 
 function hover(dot) {
-    dots.data.classList.add('hoverData')
-    dots.addEventListener('mouseenter', () => dots.data.zIndex = 9)
-    dots.addEventListener('mouseleave', () => dots.data.zIndex = 0)
+    dot = document.createElement('div');
+    dot.classList.add('hoverData');
+    dot.addEventListener('mouseenter', () => dot.zIndex = 9);
+    dot.addEventListener('mouseleave', () => dot.zIndex = 0);
 }
