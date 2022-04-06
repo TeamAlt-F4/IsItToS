@@ -4,9 +4,7 @@
     border-radius: 50%;
     display: inline-block;
     position: absolute;
-    top: 130px;
-    right: 1120px;
-    z-index: 9;
+    z-index: 9999;
 }
 .red{
     background-color: red;

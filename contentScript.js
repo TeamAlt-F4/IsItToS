@@ -1,9 +1,11 @@
-var playlistLength = 7;
+var playlistLength;
 var position = 130;
 var dots = {
-    "circle" : [],
-    "data" : []
+    "circle": [],
+    "data": []
 }
+
+const vidIDs = [];
 /*
 const SAFE_VIDEO = "SAFE_STATE";
 const QUESTIONABLE_VIDEO = "QUESTIONABLE_STATE";
@@ -63,22 +65,44 @@ function isModRestricted() { //fetch mod data
 }
 */
 
-dotConstuctor();
+window.addEventListener('load', (event) => {
+    getVideoIDs();
+    dotConstuctor();
+    console.log(vidIDs);
+    getVideoStatus();
+});
 
 let result = document.getElementById;
 console.log(result);
 
 function dotConstuctor() {
-    for(var i = 0; i < playlistLength; i++) {
+    for (var i = 0; i < playlistLength; i++) {
         dots.circle[i] = document.createElement('div');
         dots.circle[i].className = 'dot';
-        dots.circle[i].setAttribute("id", i);   
+        dots.circle[i].setAttribute("id", i);
         document.body.appendChild(dots.circle[i]);
         var elementStyle = document.getElementById(i).style;
         elementStyle.top = position + 'px';
         position = position + 101;
         hover(dots.data[i]);
         dots.circle[i].classList.add('green');  //temp line
+    }
+}
+
+function getVideoIDs() {
+    var links = document.querySelectorAll('#video-title');
+
+    for (var i = 0; i < links.length; i++) {
+        vidIDs.push(links[i].href.slice(32, 43));
+    }
+    playlistLength = vidIDs.length;
+}
+
+function getVideoStatus() {
+    for (var i = 0; i < vidIDs.length; i++) {
+        fetch("http://localhost:3000/getStatus/" + vidIDs[i], {mode: 'no-cors'}).then(data => {
+            console.log('Success:', data)
+        });
     }
 }
 

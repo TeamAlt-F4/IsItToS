@@ -57,7 +57,7 @@ app.get('/getStatus/:VideoID', (req, res) =>{
       }]
 
       //Add new Video ID to Database with rating
-      var size = data.length+2;
+      var size = data.length+2;``
       XLSX.utils.sheet_add_json(ws, input, {skipHeader:true, origin: 'A'+size});
       XLSX.writeFile(wb,'./database.xlsx');
       console.log('Added to Database');
