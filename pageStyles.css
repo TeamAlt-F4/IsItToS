@@ -4,7 +4,9 @@
     border-radius: 50%;
     display: inline-block;
     position: absolute;
-    z-index: 9999;
+    top: 130px;
+    right: 1120px;
+    z-index: 9;
 }
 .red{
     background-color: red;
@@ -16,9 +18,11 @@
     background-color: green;
 }
 .hoverData{
-    background-color: white;
+    background-color: transparent;
+    border-radius: 10%;
+    display: inline-block;
     color: black;
-    width: 20px;
-    height: 20px;
-    z-index: 9;
+    width: 60px;
+    height: 60px;
+    z-index: 99;
 }
