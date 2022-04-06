@@ -19,13 +19,13 @@ app.get('/getStatus/:VideoID', (req, res) =>{
   for(var i= 0;i<data.length;i++){
     if(data[i].video_id == VideoID){
       console.log(data[i].age_restricted);
-      res.send(data[i].age_restricted.toString());
+      res.send(data[i].moderator_rating);
       notFound = false;
       break;
     }
   }
 
-  //If not found in database, search from Youtuve API
+  //If not found in database, search from Youtube API
   if(notFound){
     google.youtube('v3').videos.list({
       key: 'AIzaSyAk7sGBtLkbPyUuq-i9KlJsB_uQWufpv08',
@@ -35,17 +35,17 @@ app.get('/getStatus/:VideoID', (req, res) =>{
     }).then((Response) =>{
       
       //console.log(JSON.stringify(Response.data.items[0].contentDetails.contentRating));
-      var ageRestricted = JSON.stringify(Response.data.items[0].contentDetails.contentRating);
+      var ageRestricted = JSON.stringify(Response.data.items[0].contentDetails.contentRating.ytRating);
       
       //Set rating
-      if(ageRestricted = " "){
-        res.send('0');
+      if(ageRestricted = "ytAgeRestricted"){
+        res.send('nsfs');
+        var rating = 1;
+        var MR = 'nsfs'
+      }else{
+        res.send('safe');
         var rating = 0;
         var MR = 'safe';
-      }else{
-        res.send('1');
-        var rating = 1;
-        var MR = 'not safe'
       }
 
       //New entry
@@ -57,7 +57,7 @@ app.get('/getStatus/:VideoID', (req, res) =>{
       }]
 
       //Add new Video ID to Database with rating
-      var size = data.length+2;``
+      var size = data.length+2;
       XLSX.utils.sheet_add_json(ws, input, {skipHeader:true, origin: 'A'+size});
       XLSX.writeFile(wb,'./database.xlsx');
       console.log('Added to Database');
@@ -68,8 +68,20 @@ app.get('/getStatus/:VideoID', (req, res) =>{
 });
 //--------------------------------------------------------------------------------//
 
-app.get('/Comment',(req,res) =>{
-  res.send('hi');
+app.get('/getComment/:VideoID',(req,res) =>{
+  
+  var VideoID = req.params.VideoID;
+  var wb = XLSX.readFile('./database.xlsx');
+  var ws = wb.Sheets['Sheet1'];
+  var data = XLSX.utils.sheet_to_json(ws);
+
+  //Search Database
+  for(var i= 0;i<data.length;i++){
+    if(data[i].video_id == VideoID){
+      res.send(data[i].comments);
+      break;
+    }
+  }
 });
 
 app.listen(port, () => {
