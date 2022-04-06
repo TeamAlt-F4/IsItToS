@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4702d14-50ae-4672-8793-7fe68e61e37a" name="Default Changelist" comment="awaiting merge">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d4702d14-50ae-4672-8793-7fe68e61e37a" name="Default Changelist" comment="fixed merge">
       <change beforePath="$PROJECT_DIR$/contentScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/contentScript.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
       <workItem from="1648069477498" duration="2479000" />
       <workItem from="1649273238859" duration="1399000" />
       <workItem from="1649278457916" duration="6000" />
-      <workItem from="1649278483791" duration="7127000" />
+      <workItem from="1649278483791" duration="7298000" />
     </task>
     <task id="LOCAL-00001" summary="awaiting merge">
       <created>1649283485418</created>
@@ -71,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649283485418</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed merge">
+      <created>1649285713035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649285713035</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="awaiting merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="awaiting merge" />
+    <MESSAGE value="fixed merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed merge" />
   </component>
 </project>
