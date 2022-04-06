@@ -18,8 +18,10 @@ app.get('/getStatus/:VideoID', (req, res) =>{
   //Search Database
   for(var i= 0;i<data.length;i++){
     if(data[i].video_id == VideoID){
-      console.log(data[i].age_restricted);
-      res.send(data[i].moderator_rating);
+      const Response = '{"moderator rating":"'+data[i].moderator_rating+'", "comment":"'+data[i].comment+'"}'
+      const JSONResponse = JSON.parse(Response);
+      console.log(JSONResponse);
+      res.send(JSONResponse);
       notFound = false;
       break;
     }
