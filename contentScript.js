@@ -1,5 +1,6 @@
 var playlistLength;
-var position = 130;
+var positionY = 179;
+var positionX = 469;
 var dots = {
     "circle" : [],
     "data" : []
@@ -18,11 +19,12 @@ function dotConstuctor() {
     for(var i = 0; i < playlistLength; i++) {
         dots.circle[i] = document.createElement('div'); // create dots
         dots.circle[i].className = 'dot';
-        dots.circle[i].setAttribute("id", i);   
+        dots.circle[i].setAttribute("id", i);
         document.body.appendChild(dots.circle[i]);
         var elementStyle = document.getElementById(i).style;
-        elementStyle.top = position + 'px';
-        position = position + 101;
+        elementStyle.top = positionY + 'px';
+        elementStyle.left = positionX + 'px';
+        positionY = positionY + 101;
         dots.circle[i].classList.add('green');  //temp line
         
         hover(i);
