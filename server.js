@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const {google, datacatalog_v1} = require('googleapis');
-const XLSX = require('xlsx')
+const XLSX = require('xlsx');
+const cors = require('cors');
+app.use(cors());
 
 //------------------Searches Database and Youtube API for rating------------------//
-app.get('/getStatus/:VideoID', (req, res) =>{
+app.get('/getStatus/:VideoID', cors(), (req, res) =>{
     
   //localhost:3000/getStatus/{VideoID}        <-- Example call from localhost
     

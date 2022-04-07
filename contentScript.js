@@ -6,13 +6,20 @@ var dots = {
     "data" : []
 }
 const vidIDs = [];
-const contentData = [];
+//const fetch = require("cross-fetch");
+//const {response} = require("express");
+const contentData = ["1:00 -1:10 Talks about sex. Don’t watch on stream", "great video"];
 
 window.addEventListener('load', (event) => {
     getVideoIDs();
+    getVideoStatus();
+    //contentData.push("testdata");
     dotConstuctor();
     console.log(vidIDs);
-    getVideoStatus();
+
+    // for(var i = 0; i < playlistLength; i++) {
+    //     setDotColor(dots[i]);
+    // }
 });
 
 function dotConstuctor() {
@@ -42,9 +49,9 @@ function getVideoIDs() {
 
 function getVideoStatus() {
     for (var i = 0; i < vidIDs.length; i++) {
-        fetch("http://localhost:3000/getStatus/" + vidIDs[i], {mode: 'no-cors'}).then(data => {
-            console.log('Success:', data);
-        });
+        fetch("http://127.0.0.1:3000/getStatus/" + vidIDs[i])
+            .then(response => response.json())
+            .then(data => console.log(data));
     }
 }
 
@@ -53,7 +60,9 @@ function setDotColor(dot) {
         dot.classList.add('green');
     } else if (dot == restrictedVideo) {
         dot.classList.add('red');
-    } else dot.classList.add('yellow');
+    } else {
+        dot.classList.add('yellow');
+    }
 }
 
 function insertData(i) {
@@ -66,7 +75,7 @@ function hover(i) {
     dots.data[i].setAttribute("id", i + 100);
     dots.circle[i].appendChild(dots.data[i]);
     let dataStyle = document.getElementById(i + 100).style;
-    insertData[i];
+    insertData(i);
         
     dots.circle[i].addEventListener('mouseenter', () => {
         dataStyle.backgroundColor = 'white';
@@ -77,5 +86,5 @@ function hover(i) {
         dataStyle.backgroundColor = 'transparent';
         dataStyle.color = 'transparent';
     });
-    
+    dataStyle.color = 'transparent';
 }
