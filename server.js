@@ -40,12 +40,17 @@ app.get('/getStatus/:VideoID', (req, res) =>{
       var ageRestricted = JSON.stringify(Response.data.items[0].contentDetails.contentRating.ytRating);
       
       //Set rating
-      if(ageRestricted = "ytAgeRestricted"){
-        res.send('nsfs');
+      var Response;
+      if(ageRestricted == "ytAgeRestricted"){
+        const Response = '{"moderator rating":"nsfs", "comment":" "}'
+        const JSONResponse = JSON.parse(Response);
+        res.send(JSONResponse);
         var rating = 1;
         var MR = 'nsfs'
       }else{
-        res.send('safe');
+        const Response = '{"moderator rating":"safe", "comment":" "}'
+        const JSONResponse = JSON.parse(Response);
+        res.send(JSONResponse);
         var rating = 0;
         var MR = 'safe';
       }
