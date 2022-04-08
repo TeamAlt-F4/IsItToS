@@ -20,7 +20,7 @@ app.get('/getStatus/:VideoID', cors(), (req, res) =>{
   //Search Database
   for(var i= 0;i<data.length;i++){
     if(data[i].video_id == VideoID){
-      const Response = '{"moderator rating":"'+data[i].moderator_rating+'", "comment":"'+data[i].comment+'"}'
+      const Response = '{"moderatorRating":"'+data[i].moderatorRating+'", "commentz":"'+data[i].commentz+'"}'
       const JSONResponse = JSON.parse(Response);
       console.log(JSONResponse);
       res.send(JSONResponse);
@@ -44,13 +44,13 @@ app.get('/getStatus/:VideoID', cors(), (req, res) =>{
       //Set rating
       var Response;
       if(ageRestricted == "ytAgeRestricted"){
-        const Response = '{"moderator rating":"nsfs", "comment":" "}'
+        const Response = '{"moderatorRating":"nsfs", "commentz":" "}'
         const JSONResponse = JSON.parse(Response);
         res.send(JSONResponse);
         var rating = 1;
         var MR = 'nsfs'
       }else{
-        const Response = '{"moderator rating":"safe", "comment":" "}'
+        const Response = '{"moderatorRating":"safe", "commentz":" "}'
         const JSONResponse = JSON.parse(Response);
         res.send(JSONResponse);
         var rating = 0;
@@ -60,8 +60,8 @@ app.get('/getStatus/:VideoID', cors(), (req, res) =>{
       //New entry
       let input = [{
         video_id: VideoID,
-        comments: "",
-        moderator_rating: MR,
+        commentz: "",
+        moderatorRating: MR,
         age_restricted: rating
       }]
 
@@ -77,7 +77,7 @@ app.get('/getStatus/:VideoID', cors(), (req, res) =>{
 });
 //--------------------------------------------------------------------------------//
 
-app.get('/getComment/:VideoID',(req,res) =>{
+app.get('/getcomment/:VideoID',(req,res) =>{
   
   var VideoID = req.params.VideoID;
   var wb = XLSX.readFile('./database.xlsx');
@@ -87,7 +87,7 @@ app.get('/getComment/:VideoID',(req,res) =>{
   //Search Database
   for(var i= 0;i<data.length;i++){
     if(data[i].video_id == VideoID){
-      res.send(data[i].comments);
+      res.send(data[i].commentz);
       break;
     }
   }

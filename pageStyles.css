@@ -24,6 +24,7 @@
     padding: 5px;
     color: black;
     font-size: larger;
-    height: 10px;
-    z-index: 999;
+    width: 110px;
+    height: fit-content;
+    z-index: 999999;
 }
