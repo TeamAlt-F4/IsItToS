@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4702d14-50ae-4672-8793-7fe68e61e37a" name="Default Changelist" comment="updated everything">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contentScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/contentScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/database.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pageStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/pageStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="d4702d14-50ae-4672-8793-7fe68e61e37a" name="Default Changelist" comment="updated contentScript.js" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +21,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -116,21 +111,7 @@
       <option name="project" value="LOCAL" />
       <updated>1649351289353</updated>
     </task>
-    <task id="LOCAL-00007" summary="updated contentScript.js">
-      <created>1649351337279</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1649351337279</updated>
-    </task>
-    <task id="LOCAL-00008" summary="updated everything">
-      <created>1649356134223</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1649356134223</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +133,6 @@
     <MESSAGE value="fixed merge" />
     <MESSAGE value="deleted obsolete code" />
     <MESSAGE value="updated contentScript.js" />
-    <MESSAGE value="updated everything" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated contentScript.js" />
   </component>
 </project>

@@ -21,10 +21,8 @@
     background-color: transparent;
     border-radius: 10%;
     display: inline-block;
-    padding: 5px;
     color: black;
-    font-size: larger;
-    width: 110px;
-    height: fit-content;
-    z-index: 999999;
+    width: 60px;
+    height: 60px;
+    z-index: 99;
 }
