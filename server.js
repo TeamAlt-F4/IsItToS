@@ -22,7 +22,7 @@ app.get('/getStatus/:VideoID', cors(), (req, res) =>{
     if(data[i].video_id == VideoID){
       const Response = '{"moderatorRating":"'+data[i].moderatorRating+'", "commentz":"'+data[i].commentz+'"}'
       const JSONResponse = JSON.parse(Response);
-      console.log(JSONResponse);
+      //console.log(JSONResponse);
       res.send(JSONResponse);
       notFound = false;
       break;
@@ -31,6 +31,7 @@ app.get('/getStatus/:VideoID', cors(), (req, res) =>{
 
   //If not found in database, search from Youtube API
   if(notFound){
+    console.log("searching google")
     google.youtube('v3').videos.list({
       key: 'AIzaSyAk7sGBtLkbPyUuq-i9KlJsB_uQWufpv08',
       part: 'contentDetails',

@@ -32,12 +32,14 @@ function dotConstuctor() { // constructs full overlay as well as calls other fun
 }
 
 function getVideoIDs() { // return video ids
+
     let links = document.querySelectorAll('#video-title');
 
     for (let i = 0; i < links.length; i++) {
         vidIDs.push(links[i].href.slice(32, 43));
     }
     playlistLength = vidIDs.length;
+    console.log(vidIDs)
 }
 
 
@@ -53,8 +55,9 @@ async function getVideoStatus() { // return playlist length and video status
         modRatings[i] = data.moderatorRating;
         setDotColor(i);
         insertData(i);
+        
 
-    }
+    }console.log(modRatings)
 }
 
 
